@@ -1,26 +1,24 @@
-contact MyToken {
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.0;
+contract Coin {
+    // Public variables
+    string public tokenName = "Enhypen";
+    string public tokenAbbrv = "ENHY";
+    uint public totalSupply = 0;
 
-// public variables here
-    string TokenName= "Enhypen";
-    string TokenAbbrv= "ENHY";
-    uint TotalSupply=0;
-    
-     // mapping variable here
-    mapping(address=>uint); public bal;
+    // Mapping of addresses to balances
+    mapping(address => uint) public balances;
 
-
-    // mint function
-    function mint (address _address, uint _value); public{
-        TotalSupply += _value;
-        bal[_address] += _value;
-
+    // Mint function
+    function mint(address recipient, uint value) public {
+        totalSupply += value;
+        balances[recipient] += value;
     }
 
-    // burn function
-    function burn(address _address, uint _value); public{
-        if (bal[_address] >= _value) {
-        TotalSupply -= _value;
-        bal[_address] -= _value;
-        }
+    // Burn function
+    function burn(address sender, uint value) public {
+        require(balances[sender] >= value, "inadequate balance to burn.");
+        totalSupply -= value;
+        balances[sender] -= value;
     }
 }
