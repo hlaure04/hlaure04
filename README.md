@@ -1,7 +1,6 @@
-public class MyToken {
-    public static void main (String[] args) {
+contact MyToken {
 
-    // public variables here
+// public variables here
     string TokenName= "Enhypen";
     string TokenAbbrv= "ENHY";
     uint TotalSupply=0;
