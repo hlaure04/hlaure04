@@ -2,6 +2,7 @@
 pragma solidity 0.8.0; 
 
 contract Coin {
+   
     // Public variables
     string public tokenName = "Enhypen";
     string public tokenAbbrv = "ENHY";
