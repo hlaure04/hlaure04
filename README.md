@@ -35,3 +35,6 @@ contract Coin {
         balances[sender] -= value;
     }
 }
+
+# Authors
+Heleana V. Laure
